@@ -1,0 +1,5 @@
+*.js
+*-v8.log
+
+/node_modules/*
+/*.tgz
