@@ -1,5 +1,5 @@
 import { ChildProcess, fork } from "child_process";
-import { dirname, join } from "path";
+import { dirname, join, isAbsolute } from "path";
 
 import { RestartableKernel } from "./kernels";
 import { StartInfo } from "./startInfo";
@@ -26,8 +26,9 @@ export class ChildProcessKernel extends RestartableKernel<IStartInfo> {
 
     protected _onStart(): void {
         const { relativePath, argv, env } = this.cached;
-        const pathToCode = join(__dirname, relativePath);
+        const pathToCode = isAbsolute(relativePath) ? relativePath : join(__dirname, relativePath);
         const codeDir = dirname(pathToCode);
+        this._log(`Child: [_onStart] going to start -> ${pathToCode}, [${argv.join(", ")}]`);
         const child = this._child = fork(pathToCode, argv, {
             env: env || {},
             cwd: codeDir,
@@ -46,6 +47,7 @@ export class ChildProcessKernel extends RestartableKernel<IStartInfo> {
 
     protected _onStop(): void {
         this._notify(State.Dirty);
+        this._child.kill("SIGINT");
         this._killTimeout = setTimeout(() => {
             this._log("ForceKill");
             this._child.kill("SIGKILL");

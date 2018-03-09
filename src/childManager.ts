@@ -1,3 +1,5 @@
+import { dirname } from "path";
+
 import { ChildProcessKernel } from "./childProcessKernel";
 import { LifecycleManager, reached } from "./lifecycleManager";
 import { Kernel } from "./kernels";
@@ -21,7 +23,7 @@ export class ChildManager extends Kernel {
     private _procs: StringMap<ProcInfo> = {};
     private _running = 0;
 
-    public constructor(public readonly initialLoad: Func<ILaunchFile>) {
+    public constructor(public readonly relativePath: string, public readonly initialLoad: Func<ILaunchFile>) {
         super();
     }
 
