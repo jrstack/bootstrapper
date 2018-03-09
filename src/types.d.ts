@@ -1,20 +1,20 @@
-interface Action { (): void; }
-interface Action1<T> { (arg: T): void; }
-interface Func<R> { (): R; }
-interface Func1<T, R> { (arg: T): R; }
+export interface Action { (): void; }
+export interface Action1<T> { (arg: T): void; }
+export interface Func<R> { (): R; }
+export interface Func1<T, R> { (arg: T): R; }
 
-interface StringMap<T> {
+export interface StringMap<T> {
     [key: string]: T;
 }
 
-interface IStartInfo {
+export interface IStartInfo {
     relativePath: string;
     argv: string[];
     env: {};
 }
 
-interface ILaunchFile {
+export interface ILaunchFile {
     run: StringMap<IStartInfo>;
 }
 
-type Message = "onStop" | "onStart";
+export type Message = "onStop" | "onStart";

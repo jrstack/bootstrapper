@@ -1,6 +1,6 @@
 /.vscode/*
-/src/*.ts
+/src/*
 tsconfig.json
+/*.tgz
 
-!/src/*.d.ts
 !/lib

@@ -1,4 +1,5 @@
 import * as path from "path";
+import { IStartInfo, StringMap } from "./types";
 
 export class StartInfo implements IStartInfo {
     relativePath: string;

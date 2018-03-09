@@ -1,6 +1,6 @@
 import { isAbsolute, join } from "path";
 
-import { getDriver as getDriverInternal, workerModeArg, install } from "./driver";
+import { getDriver as getDriverInternal, workerModeArg, install, IDriver } from "./driver";
 console.log("Running --", process.argv, __dirname, __filename, process.cwd());
 if (require.main === module) {
     const [_0, _1, ...args] = process.argv;
@@ -40,4 +40,5 @@ if (require.main === module) {
 function getDriver(launchPath: string) {
     return getDriverInternal(true, launchPath, __filename);
 }
-export { getDriver, IDriver } from "./driver";
+
+export { getDriver, IDriver };
