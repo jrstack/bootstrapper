@@ -4,7 +4,7 @@ import { ChildProcessKernel } from "./childProcessKernel";
 import { LifecycleManager, reached } from "./lifecycleManager";
 import { Kernel } from "./kernels";
 import { State, StateString } from "./state";
-import { IStartInfo, ILaunchFile, Func, StringMap } from "./types";
+import { IStartInfo, ILaunchFile, Func, StringMap } from "../types/types";
 
 class ProcInfo {
     public readonly internal: ChildProcessKernel;

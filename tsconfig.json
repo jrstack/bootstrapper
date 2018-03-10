@@ -1,7 +1,7 @@
 {
   "extends": "./node_modules/@jrstack/ts-build/tsconfig.base.node.json",
   "compilerOptions": {
-    "declaration": true
+    "declaration": true,
   },
   "exclude": [
     "./lib/*"

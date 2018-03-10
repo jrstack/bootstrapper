@@ -1,4 +1,4 @@
-import { Action1, Message } from "./types";
+import { Action1, Message } from "../types/types";
 export interface Sendable {
     send(message: string, handle?: {}, callback?: Action1<null | Error>): boolean;
 }

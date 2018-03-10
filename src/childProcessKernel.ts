@@ -6,7 +6,7 @@ import { StartInfo } from "./startInfo";
 import { sendIPC } from "./helpers";
 import { State } from "./state";
 import { logger } from "./logger";
-import { IStartInfo } from "./types";
+import { IStartInfo } from "../types/types";
 
 const log = logger("ChildProcessKernel");
 

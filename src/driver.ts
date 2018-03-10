@@ -7,7 +7,7 @@ import { ChildManager } from "./childManager";
 import { State, StateString } from "./state";
 import { reached, LifecycleManager } from "./lifecycleManager";
 import { logger } from "./logger";
-import { ILaunchFile, Message } from "./types";
+import { ILaunchFile, Message } from "../types/types";
 
 export interface IDriver {
     run(): void;

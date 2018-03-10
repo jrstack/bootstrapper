@@ -1,5 +1,5 @@
 import { State } from "./state";
-import { Action1 } from "./types";
+import { Action1 } from "../types/types";
 
 export abstract class Kernel {
     protected _notify: Action1<State>;
